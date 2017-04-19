@@ -1,0 +1,32 @@
+{
+  "name": "sintomas",
+  "version": "1.0.0",
+  "description": "diagnostico mtc segun baGang, 5 elementos, etc.",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acalpixca/sintomas.git"
+  },
+  "keywords": [
+    "mtc",
+    "diagnostico"
+  ],
+  "author": "Eva Sanchez Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acalpixca/sintomas/issues"
+  },
+  "homepage": "https://github.com/acalpixca/sintomas"
+}

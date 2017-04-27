@@ -41,7 +41,7 @@ Anamnesis.prototype.getListaSintoma= function(){
 	return(this.listaSintoma);
 }
 
-Anamnesis.prototype.setCreador = function(practicante) {
+Anamnesis.prototype.setPracticante = function(practicante) {
 	this.practicante=practicante;
 };
 

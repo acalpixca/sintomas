@@ -13,15 +13,15 @@ describe('Elemento', function() {
   });
 
 	it('Padre de TIERRA es FUEGO - no requiere % en el calculo', function() {
-		assert.equal(Elemento.TIERRA.padre(),Elemento.FUEGO.nombre);
+		assert.equal(Elemento.TIERRA.padre(),Elemento.FUEGO.getNombre());
 	  });
 
 	it('Padre de FUEGO es MADERA - requiere % en el calculo', function() {
-		assert.equal(Elemento.FUEGO.padre(),Elemento.MADERA.nombre);
+		assert.equal(Elemento.FUEGO.padre(),Elemento.MADERA.getNombre());
 	  });
 	  	  
 	it('Hijo de MADERA es FUEGO', function() {
-		assert.equal(Elemento.MADERA.hijo(),Elemento.FUEGO.nombre);
+		assert.equal(Elemento.MADERA.hijo(),Elemento.FUEGO.getNombre());
 	  });
 
 	  it('Abuelo de TIERRA es MADERA - requiere % en el calculo', function() {
@@ -29,20 +29,20 @@ describe('Elemento', function() {
 	  });
 
 	  it('Abuelo de FUEGO es AGUA - requiere % en el calculo', function() {
-		assert.equal(Elemento.FUEGO.abuelo(),Elemento.AGUA.nombre);
+		assert.equal(Elemento.FUEGO.abuelo(),Elemento.AGUA.getNombre());
 	  });
   
 	  it('Abuelo de MADERA es METAL - no requiere % en el calculo', function() {
-		assert.equal(Elemento.MADERA.abuelo(),Elemento.METAL.nombre);
+		assert.equal(Elemento.MADERA.abuelo(),Elemento.METAL.getNombre());
 	  });
 
 	  it('Nieto de METAL es MADERA', function() {
-		assert.equal(Elemento.METAL.nieto(),Elemento.MADERA.nombre);
+		assert.equal(Elemento.METAL.nieto(),Elemento.MADERA.getNombre());
 	  });
 
 	it('Nieto de MADERA es TIERRA - requiere % en el calculo', function() {
 
-		assert.equal(Elemento.MADERA.nieto(),Elemento.TIERRA.nombre);
+		assert.equal(Elemento.MADERA.nieto(),Elemento.TIERRA.getNombre());
 	  });
 	  
   // We can have more its here

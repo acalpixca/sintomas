@@ -14,23 +14,10 @@ function Elemento(nombre){
 	this.nieto=function(){
 		return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+2) % 5]);
 	}
+	this.getNombre=function(){
+		return(this.nombre);	
+	}
 }
-
-/*function padre(){
-	return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-1) % 5]);
-}*
-
-function hijo(){
-	return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+1) % 5]);
-}
-
-function abuelo(){
-	return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-2) % 5]);
-} 
-
-function nieto(){
-	return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+2) % 5]);
-} */
 
 const FUEGO = new Elemento('fuego');
 const TIERRA = new Elemento('tierra');

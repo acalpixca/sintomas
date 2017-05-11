@@ -9,11 +9,15 @@ var Elemento=require('../elemento');
 var assert = chai.assert;
 
 describe('MetodoSAAM', function() {
-  it('tratamientoSAAM devuelve algo', function() {
+  it('tratamientoSAAM devuelve algo al tonificar', function() {
 	
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.RINON,'tonificar'),'superduper');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'superduper');
   });
 
+  it('tratamientoSAAM devuelve algo al dispersar', function() {
+	
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'superduper');
+  });
 
   it('Pruebo la inclusion del metodo estrellaSAAM en Organo manipulando prototype', function() {
 	

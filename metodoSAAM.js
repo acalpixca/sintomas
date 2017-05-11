@@ -168,19 +168,70 @@ Organo.Organo.prototype.estrellaSAAM=function(){
 function tratamientoSAAM(organo, tonificarDispersar){
 	assert.equal((tonificarDispersar=='tonificar' || tonificarDispersar=='dispersar'),true);
 
-	var resultado="superduper";
+	var resultado=[];
+	var elementoAbuelo=organo.getElemento().abuelo();
+	var elementoPadre=organo.getElemento().padre();
+	var elementoHijo=organo.getElemento().hijo();
+
 	if (tonificarDispersar=='tonificar') {
-	// tonificas madre y dispersas abuelo
-		//tonificar la madre
-		
-		var elementoAbuelo=organo.getElemento().abuelo();
-		if (organo.isYin()) { var organoAbuelo=elementoAbuelo.organoYin()}
-		else {var organoAbuelo=elementoAbuelo.organoYang()}
+	// tonificas padre y dispersas abuelo
+
+		if (organo.isYin()) { 
+			var organoPadre=elementoPadre.organoYin();
+			var organoAbuelo=elementoAbuelo.organoYin()
+		}
+		else {
+			var organoPadre=elementoPadre.organoYang();
+			var organoAbuelo=elementoAbuelo.organoYang()
+		}
+
+		//tonificar el padre
+		var t1Meridiano=organoPadre.getNombre();
+		var t1Punto=organoPadre.estrellaSAAM()[elementoPadre.getNombre()];
 
 		var t2Meridiano=organo.getNombre();
-		var t2Punto=organo.estrellaTung(); //[elementoAbuelo.getNombre()];
+		var t2Punto=organo.estrellaSAAM()[elementoPadre.getNombre()];
+
+		// dispersar el abuelo
+		var d1Meridiano=organoAbuelo.getNombre();
+		var d1Punto=organoAbuelo.estrellaSAAM()[elementoAbuelo.getNombre()];
+
+		var d2Meridiano=organo.getNombre();
+		var d2Punto=organo.estrellaSAAM()[elementoAbuelo.getNombre()];
+
+		resultado.push("Tonificar " + t1Meridiano + t1Punto + ".");	
+		resultado.push("Tonificar " + t2Meridiano + t2Punto + ".");
+		resultado.push("Dispersar " + d1Meridiano + d1Punto + ".");
+		resultado.push("Dispersar " + d2Meridiano + d2Punto + ".");		
 	}
 	else { // dispersar
+	// dispersas el hijo y tonificas el abuelo
+		if (organo.isYin()) { 
+			var organoHijo=elementoHijo.organoYin();
+			var organoAbuelo=elementoAbuelo.organoYin()
+		}
+		else {
+			var organoHijo=elementoHijo.organoYang();
+			var organoAbuelo=elementoAbuelo.organoYang()
+		}
+
+		// dispersar el hijo
+		var d1Meridiano=organoHijo.getNombre();
+		var d1Punto=organoHijo.estrellaSAAM()[elementoHijo.getNombre()];
+
+		var d2Meridiano=organo.getNombre();
+		var d2Punto=organo.estrellaSAAM()[elementoHijo.getNombre()];
+		//tonificar el abuelo
+		var t1Meridiano=organoAbuelo.getNombre();
+		var t1Punto=organoAbuelo.estrellaSAAM()[elementoAbuelo.getNombre()];
+
+		var t2Meridiano=organo.getNombre();
+		var t2Punto=organo.estrellaSAAM()[elementoAbuelo.getNombre()];
+
+		resultado.push("Dispersar " + d1Meridiano + d1Punto + ".");
+		resultado.push("Dispersar " + d2Meridiano + d2Punto + ".");
+		resultado.push("Tonificar " + t1Meridiano + t1Punto + ".");	
+		resultado.push("Tonificar " + t2Meridiano + t2Punto + ".");
 	}
 	return(resultado);
 }

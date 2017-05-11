@@ -1,5 +1,5 @@
 var chai=require('chai');
-var MetodoTUNG=require('../metodoTUNG');
+var MetodoSAAM=require('../metodoSAAM');
 var Organo=require('../organo');
 var Elemento=require('../elemento');
 
@@ -8,16 +8,16 @@ var Elemento=require('../elemento');
 
 var assert = chai.assert;
 
-describe('MetodoTUNG', function() {
-  it('tratamientoTUNG devuelve algo', function() {
+describe('MetodoSAAM', function() {
+  it('tratamientoSAAM devuelve algo', function() {
 	
-	assert.equal(MetodoTUNG.tratamientoTUNG(Organo.RINON,'tonificar'),'superduper');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.RINON,'tonificar'),'superduper');
   });
 
 
-  it('Pruebo la inclusion del metodo estrellaTUNG en Organo manipulando prototype', function() {
+  it('Pruebo la inclusion del metodo estrellaSAAM en Organo manipulando prototype', function() {
 	
-	assert.strictEqual(Organo.RINON.estrellaTUNG().fuego,2);
+	assert.strictEqual(Organo.RINON.estrellaSAAM().fuego,2);
   });
 
   it('Pruebo la inclusion del metodo organoYang en Elemento manipulando prototype. Organo Yin de fuego es corazon', function() {

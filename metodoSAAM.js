@@ -24,7 +24,7 @@ Elemento.Elemento.prototype.organoYang=function(){
 	}
 }
 
-Organo.Organo.prototype.estrellaTUNG=function(){
+Organo.Organo.prototype.estrellaSAAM=function(){
 	switch(this.getNombre()) {
 		case 'rinon':
   			return(
@@ -165,7 +165,7 @@ Organo.Organo.prototype.estrellaTUNG=function(){
 
 };
 
-function tratamientoTUNG(organo, tonificarDispersar){
+function tratamientoSAAM(organo, tonificarDispersar){
 	assert.equal((tonificarDispersar=='tonificar' || tonificarDispersar=='dispersar'),true);
 
 	var resultado="superduper";
@@ -185,4 +185,4 @@ function tratamientoTUNG(organo, tonificarDispersar){
 	return(resultado);
 }
 
- module.exports.tratamientoTUNG = tratamientoTUNG;
+ module.exports.tratamientoSAAM = tratamientoSAAM;

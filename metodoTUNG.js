@@ -2,16 +2,32 @@ var Elemento=require('./elemento');
 var Organo=require('./organo');
 var assert=require('assert');
 
+Elemento.Elemento.prototype.organoYin=function(){
+	switch(this.getNombre()){
+		case 'fuego': return(Organo.CORAZON); break;
+		case 'tierra': return(Organo.BAZO); break;
+		case 'metal': return(Organo.PULMON); break;
+		case 'agua': return(Organo.RINON); break;
+		case 'madera': return(Organo.HIGADO); break;
+		default: return('impossible');
+	}
+}
+
+Elemento.Elemento.prototype.organoYang=function(){
+	switch(this.getNombre()){
+		case 'fuego': return(Organo.ID); break;
+		case 'tierra': return(Organo.ESTOMAGO); break;
+		case 'metal': return(Organo.IG); break;
+		case 'agua': return(Organo.VEJIGA); break;
+		case 'madera': return(Organo.VESICULA); break;
+		default: return('impossible');
+	}
+}
+
 Organo.Organo.prototype.estrellaTUNG=function(){
-	//assert.equal(1,1);
-	//return('hola');
-	//if (this.getNombre()=='rinon') {return(this.getNombre())}
-
-
 	switch(this.getNombre()) {
 		case 'rinon':
   			return(
-				//this.getNombre()
 				{fuego: 2 ,
 				 tierra: 3 ,
 				 metal: 7 ,
@@ -23,7 +39,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'vejiga':
   			return(
-				//this.getNombre()
 				{fuego: 60 ,
 				 tierra: 40 ,
 				 metal: 67,
@@ -35,7 +50,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'higado':
   			return(
-				//this.getNombre()
 				{fuego: 2 ,
 				 tierra: 3 ,
 				 metal: 4 ,
@@ -47,7 +61,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'vesicula':
   			return(
-				//this.getNombre()
 				{fuego: 38 ,
 				 tierra: 34 ,
 				 metal: 44 ,
@@ -59,7 +72,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'corazon':
   			return(
-				//this.getNombre()
 				{fuego: 8 ,
 				 tierra: 7 ,
 				 metal: 4 ,
@@ -71,7 +83,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'intestino delgado':
   			return(
-				//this.getNombre()
 				{fuego: 5 ,
 				 tierra: 8 ,
 				 metal: 1 ,
@@ -83,7 +94,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'pericardio':
   			return(
-				//this.getNombre()
 				{fuego: 8 ,
 				 tierra: 7 ,
 				 metal: 5 ,
@@ -95,7 +105,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'san jiao':
   			return(
-				//this.getNombre()
 				{fuego: 6 ,
 				 tierra: 10 ,
 				 metal: 1 ,
@@ -107,7 +116,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'bazo pancreas':
   			return(
-				//this.getNombre()
 				{fuego: 2 ,
 				 tierra: 3 ,
 				 metal: 5 ,
@@ -119,7 +127,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'estomago':
   			return(
-				//this.getNombre()
 				{fuego: 41 ,
 				 tierra: 36 ,
 				 metal: 45 ,
@@ -131,7 +138,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'pulmon':
   			return(
-				//this.getNombre()
 				{fuego: 10 ,
 				 tierra: 9 ,
 				 metal: 8 ,
@@ -143,7 +149,6 @@ Organo.Organo.prototype.estrellaTUNG=function(){
   			break;
 		case 'intestino grueso':
   			return(
-				//this.getNombre()
 				{fuego: 5 ,
 				 tierra: 11 ,
 				 metal: 1 ,
@@ -161,10 +166,21 @@ Organo.Organo.prototype.estrellaTUNG=function(){
 };
 
 function tratamientoTUNG(organo, tonificarDispersar){
+	assert.equal((tonificarDispersar=='tonificar' || tonificarDispersar=='dispersar'),true);
+
+	var resultado="superduper";
 	if (tonificarDispersar=='tonificar') {
-		var resultado='whatever';
+	// tonificas madre y dispersas abuelo
+		//tonificar la madre
+		
+		var elementoAbuelo=organo.getElemento().abuelo();
+		if (organo.isYin()) { var organoAbuelo=elementoAbuelo.organoYin()}
+		else {var organoAbuelo=elementoAbuelo.organoYang()}
+
+		var t2Meridiano=organo.getNombre();
+		var t2Punto=organo.estrellaTung(); //[elementoAbuelo.getNombre()];
 	}
-	else {
+	else { // dispersar
 	}
 	return(resultado);
 }

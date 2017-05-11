@@ -6,8 +6,6 @@ function Organo(params){
 	this.yang=params.yang;
 	this.elemento=params.elemento;
 
-
-
 	this.isYin=function(){
 		return(this.yin);
 	};
@@ -21,6 +19,7 @@ function Organo(params){
 		return(this.nombre);
 	}
 }
+
 // zangfu elemento FUEGO
 const CORAZON = new Organo({nombre:'corazon', yin: true, yang: false, elemento: Elemento.FUEGO});
 const ID = new Organo({nombre:'intestino delgado', yin: false, yang: true, elemento: Elemento.FUEGO});
@@ -40,8 +39,8 @@ const HIGADO = new Organo({nombre:'higado', yin: true, yang: false, elemento: El
 const VESICULA = new Organo({nombre:'vesicula biliar', yin: false, yang: true, elemento: Elemento.MADERA});
 
 
- module.exports.Organo = Organo;
- module.exports.CORAZON = CORAZON;
+module.exports.Organo = Organo;
+module.exports.CORAZON = CORAZON;
 module.exports.ID= ID;
 module.exports.PERICARDIO = PERICARDIO;
 module.exports.SANJIAO = SANJIAO;

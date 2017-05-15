@@ -14,6 +14,11 @@ describe('MetodoSAAM', function() {
 	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'superduper');
   });
 
+  it('tratamientoSAAM tonficar ID que pasaaa devuelve algo al tonificar', function() {
+	
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.ID,'tonificar').toString(),'superduper');
+  });
+  
   it('tratamientoSAAM devuelve algo al dispersar', function() {
 	
 	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'superduper');

@@ -25,51 +25,7 @@ Elemento.Elemento.prototype.organoYang=function(){
 }
 
 Organo.Organo.prototype.estrellaSAAM=function(){
-	switch(this.getNombre()) {
-		case 'rinon':
-  			return(
-				{fuego: 2 ,
-				 tierra: 3 ,
-				 metal: 7 ,
-				 agua: 10,
-				 madera: 1
-				}	
-
-			);
-  			break;
-		case 'vejiga':
-  			return(
-				{fuego: 60 ,
-				 tierra: 40 ,
-				 metal: 67,
-				 agua: 66,
-				 madera: 65
-				}	
-
-			);
-  			break;
-		case 'higado':
-  			return(
-				{fuego: 2 ,
-				 tierra: 3 ,
-				 metal: 4 ,
-				 agua: 8,
-				 madera: 1
-				}	
-
-			);
-  			break;
-		case 'vesicula':
-  			return(
-				{fuego: 38 ,
-				 tierra: 34 ,
-				 metal: 44 ,
-				 agua: 43,
-				 madera: 41
-				}	
-
-			);
-  			break;
+	switch(this.getNombre()) {	
 		case 'corazon':
   			return(
 				{fuego: 8 ,
@@ -158,7 +114,51 @@ Organo.Organo.prototype.estrellaSAAM=function(){
 
 			);
   			break;
-		
+		case 'rinon':
+  			return(
+				{fuego: 2 ,
+				 tierra: 3 ,
+				 metal: 7 ,
+				 agua: 10,
+				 madera: 1
+				}	
+
+			);
+  			break;
+		case 'vejiga':
+  			return(
+				{fuego: 60 ,
+				 tierra: 40 ,
+				 metal: 67,
+				 agua: 66,
+				 madera: 65
+				}	
+
+			);
+  			break;
+		case 'higado':
+  			return(
+				{fuego: 2 ,
+				 tierra: 3 ,
+				 metal: 4 ,
+				 agua: 8,
+				 madera: 1
+				}	
+
+			);
+  			break;
+		case 'vesicula biliar':
+  			return(
+				{fuego: 38 ,
+				 tierra: 34 ,
+				 metal: 44 ,
+				 agua: 43,
+				 madera: 41
+				}	
+
+			);
+  			break;
+			
 		default:
   			drink = 'Will never happen';
 	}

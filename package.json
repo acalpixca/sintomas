@@ -1,8 +1,8 @@
 {
-  "name": "sintomas",
+  "name": "acu-logic",
   "version": "1.0.0",
   "description": "diagnostico mtc segun baGang, 5 elementos, etc.",
-  "main": "main.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/acalpixca/sintomas.git"
+    "url": "git+https://github.com/acalpixca/sintomas.git"
   },
   "keywords": [
     "mtc",
     "diagnostico"
   ],
-  "author": "Eva Sanchez Guerrero",
+  "author": "Eva Sanchez Guerrero <acalpixca@gmail.com> (http://www.techmex.es)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/acalpixca/sintomas/issues"

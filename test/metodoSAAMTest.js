@@ -3,38 +3,36 @@ var MetodoSAAM=require('../metodoSAAM');
 var Organo=require('../organo');
 var Elemento=require('../elemento');
 
-// recurso buenísimo para UT en Node: https://www.sitepoint.com/unit-test-javascript-mocha-chai/
-// y para mocha: http://chaijs.com/api/assert/
 
 var assert = chai.assert;
 
 describe('MetodoSAAM', function() {
-  it('tratamientoSAAM devuelve algo al tonificar', function() {
+  it('tratamientoSAAM tonificar VEJIGA', function() {
 	
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'superduper');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'Tonificar intestino grueso1.,Tonificar vejiga67.,Dispersar estomago36.,Dispersar vejiga40.');
   });
 
-  it('tratamientoSAAM tonficar ID que pasaaa devuelve algo al tonificar', function() {
+  it('tratamientoSAAM tonficar ID', function() {
 	
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.ID,'tonificar').toString(),'superduper');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.ID,'tonificar').toString(),'Tonificar vesicula biliar41.,Tonificar intestino delgado3.,Dispersar vejiga66.,Dispersar intestino delgado2.');
   });
   
-  it('tratamientoSAAM devuelve algo al dispersar', function() {
+  it('tratamientoSAAM dispersar HIGADO', function() {
 	
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'superduper');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'Dispersar corazon8.,Dispersar higado2.,Tonificar pulmon8.,Tonificar higado4.');
   });
 
-  it('Pruebo la inclusion del metodo estrellaSAAM en Organo manipulando prototype', function() {
+  it('Inclusion del metodo estrellaSAAM en Organo mediante manipulacion de su prototype. Punta fuego de estrella RINON vale 2.', function() {
 	
 	assert.strictEqual(Organo.RINON.estrellaSAAM().fuego,2);
   });
 
-  it('Pruebo la inclusion del metodo organoYang en Elemento manipulando prototype. Organo Yin de fuego es corazon', function() {
+  it('Inclusion del metodo organoYang en Elemento mediante manipulacion de su prototype. Organo Yin de fuego es corazon', function() {
 	
 	assert.strictEqual(Elemento.FUEGO.organoYin().getNombre(),'corazon');
   });
 
-  it('Pruebo la inclusion del metodo organoYin en Elemento manipulando prototype. Organo Yang de fuego es intestino delgado', function() {
+  it('Inclusion del metodo organoYin en Elemento mediante manipulacion de su prototype. Organo Yang de fuego es intestino delgado', function() {
 	
 	assert.strictEqual(Elemento.FUEGO.organoYang().getNombre(),'intestino delgado');
   });

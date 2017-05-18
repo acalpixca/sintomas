@@ -42,24 +42,29 @@ function Canal(parametros){
 		return(this.organo);
 	}
 	this.isYin=function(){
+		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.yin);
 	}
 	this.isYang=function(){
+				assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.yang);
 	}
 	this.getPieMano=function(){
+		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano);
 	}
 	this.isPie=function(){
+		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano=="pie");
 	}
 	this.isMano=function(){
+		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano=="mano");
 	}
 }
 
 function canalPorNombre(nombre, pieMano) {
-// helper function que devuelve el objeto elemento correspondiende a nombre
+// helper function que devuelve el objeto Canal correspondiende a nombre. pieMano es optativo.
 	switch(nombre) {
 			case('taiyin') : 
 				if(pieMano=="pie") return(TAIYIN_PIE); else return(TAIYIN_MANO); 

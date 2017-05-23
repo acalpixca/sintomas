@@ -112,6 +112,24 @@ function canalPorNombre(nombre, pieMano) {
 		}
 }
 
+function getCanalPorOrgano(organo) {
+switch (organo) {
+case Organo.RINON: return (SHAOYIN_PIE); break;
+case Organo.CORAZON: return (SHAOYIN_MANO); break;
+case Organo.PULMON: return (TAIYIN_MANO); break;
+case Organo.BAZO: return (TAIYIN_PIE); break;
+case Organo.IG: return(YANGMING_MANO); break;
+case Organo.ESTOMAGO: return(YANGMING_PIE); break;
+case Organo.ID: return(TAIYANG_MANO); break;
+case Organo.VEJIGA: return(TAIYANG_PIE); break;
+case Organo.PERICARDIO: return(JUEYIN_MANO); break;
+case Organo. HIGADO: return(JUEYIN_PIE); break;
+case Organo.SANJIAO: return(SHAOYANG_MANO); break;
+case Organo.VESICULA: return(SHAOYANG_PIE); break;
+default: return('imposible');
+}
+}
+
 //nombre, organo, pieMano, yin, yang, tipo)
 
 const TAIYIN_MANO = new Canal({nombre: 'taiyin', pieMano: 'mano', organo: Organo.PULMON, yin: true, yang: false, tipo: CANALPRIMARIO});

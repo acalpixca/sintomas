@@ -3,6 +3,7 @@ var Canal=require('./canal')
 var assert=require('assert');
 
 function Punto(parametros){
+	// parametros {canal, numero, nombre}
 	this.canal=parametros.canal;
 	this.numero=parametros.numero;
 	this.nombre=parametros.nombre;

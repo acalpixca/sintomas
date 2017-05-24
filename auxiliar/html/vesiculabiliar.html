@@ -1,0 +1,507 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script type="text/javascript" src="scripts/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jQuery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/extraeDatos.js"></script>
+</head>
+<body>
+<table>
+<tr>
+<th>Point</th>
+<th></th>
+<th>Name</th>
+<th>English</th>
+<th>Pinyin</th>
+<th>Han Geul 한글</th>
+<th>Romaji</th>
+<th>Vietnamese</th>
+<th>Alternative names</th>
+</tr>
+<tr>
+<td>Gb-1</td>
+<td>瞳子髎</td>
+<td>Tongziliao</td>
+<td>Pupil Crevice</td>
+<td>tóng zǐ liáo</td>
+<td>dong ja ryo 동자료</td>
+<td>dō shi ryō</td>
+<td>Đồng tử liêu</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-2</td>
+<td>聽會</td>
+<td>Tinghui</td>
+<td>Meeting of Hearing</td>
+<td>tīng huì</td>
+<td>cheong hoe 청회</td>
+<td>chō e</td>
+<td>Thính hội</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-3</td>
+<td>上關</td>
+<td>Shangguan</td>
+<td>Above the Joint</td>
+<td>shàng guān</td>
+<td>sang gwan 상관/gaek ju in 객주인</td>
+<td>kyaku shu jin</td>
+<td>Thượng quan</td>
+<td>客主人 kè zhǔ rén</td>
+</tr>
+<tr>
+<td>Gb-4</td>
+<td>頷厭</td>
+<td>Hanyan</td>
+<td>Jaw Serenity</td>
+<td>hàn yàn</td>
+<td>ha yeom 함염</td>
+<td>gan en</td>
+<td>Hàm yến</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-5</td>
+<td>懸顱</td>
+<td>Xuanlu</td>
+<td>Suspended Skull</td>
+<td>xuán lú</td>
+<td>hyeol lo 현로</td>
+<td>ken ro</td>
+<td>Huyền lư</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-6</td>
+<td>懸厘</td>
+<td>Xuanli</td>
+<td>Suspended Hair</td>
+<td>xuán lí</td>
+<td>hyeol li 현리</td>
+<td>ken ri</td>
+<td>Huyền ly</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-7</td>
+<td>曲鬢</td>
+<td>Qubin</td>
+<td>Crook of the Temple</td>
+<td>qū bìn</td>
+<td>gok bin 곡빈</td>
+<td>kyoku bin(?)</td>
+<td>Khúc tân</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-8</td>
+<td>率谷</td>
+<td>Shuaigu</td>
+<td>Leading Valley</td>
+<td>shuài gǔ</td>
+<td>sol gok 솔곡</td>
+<td>sok koku?</td>
+<td>Suất cốc</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-9</td>
+<td>天沖</td>
+<td>Tianchong</td>
+<td>Heavenly Rushing</td>
+<td>tiān chōng</td>
+<td>cheon chung 천충</td>
+<td>ten shō?</td>
+<td>Thiên xung</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-10</td>
+<td>浮白</td>
+<td>Fubai</td>
+<td>Floating White</td>
+<td>fú bái</td>
+<td>bu baek 부백</td>
+<td>fu haku(?)</td>
+<td>Phù bạch</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-11</td>
+<td>頭竅陰</td>
+<td>Touqiaoyin</td>
+<td>Yin Portals of the Head</td>
+<td>tóu qiào yīn</td>
+<td>[du] gyu eum [두] 규음</td>
+<td>atama kyō in</td>
+<td>Đầu khiếu âm</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-12</td>
+<td>完骨</td>
+<td>Wangu</td>
+<td>Mastoid Process</td>
+<td>wán gǔ</td>
+<td>wan gol 완골</td>
+<td>kan kotsu</td>
+<td>Hoàn cốt</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-13</td>
+<td>本神</td>
+<td>Benshen</td>
+<td>Root of the Spirit</td>
+<td>běn shén</td>
+<td>bon sin 본신</td>
+<td>hon jin</td>
+<td>Bản thần</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-14</td>
+<td>陽白</td>
+<td>Yangbai</td>
+<td>Yang White</td>
+<td>yáng bái</td>
+<td>yang baek 양백</td>
+<td>yō haku</td>
+<td>Dương bạch</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-15</td>
+<td>頭臨泣</td>
+<td>Toulinqi</td>
+<td>Head Governor of Tears</td>
+<td>tóu lín qì</td>
+<td>[du] im eup [두] 임읍</td>
+<td>atama no rin kyū</td>
+<td>Đầu lâm khấp</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-16</td>
+<td>目窗(?)</td>
+<td>Muchuang</td>
+<td>Window of the Eye</td>
+<td>mù chuāng(?)</td>
+<td>mok chang 목창</td>
+<td>moku sō</td>
+<td>Mục song</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-17</td>
+<td>正營</td>
+<td>Zhengying</td>
+<td>Upright Nutrition</td>
+<td>zhèng yíng</td>
+<td>jyeong yeong 정영</td>
+<td>shō ei</td>
+<td>Chính dinh</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-18</td>
+<td>承靈</td>
+<td>Chengling</td>
+<td>Support Spirit</td>
+<td>chéng líng</td>
+<td>seung nyeong 승령</td>
+<td>shō rei</td>
+<td>Thừa linh</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-19</td>
+<td>腦空</td>
+<td>Naokong</td>
+<td>Brain Hollow</td>
+<td>nǎo kōng</td>
+<td>noe gong 뇌공</td>
+<td>nō kū</td>
+<td>Não không</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-20</td>
+<td>風池</td>
+<td>Fengchi</td>
+<td>Wind Pool</td>
+<td>fēng chí</td>
+<td>pung ji 풍지</td>
+<td>fū chi</td>
+<td>Phong trì</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-21</td>
+<td>肩井</td>
+<td>Jianjing</td>
+<td>Shoulder Well</td>
+<td>jīan jǐng</td>
+<td>gyeon jeong 견정</td>
+<td>ken sei</td>
+<td>Kiên tỉnh</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-22</td>
+<td>淵腋</td>
+<td>Yuanye</td>
+<td>Armpit Abyss</td>
+<td>yuān yè</td>
+<td>yeon aek 연액</td>
+<td>en eki(?)</td>
+<td>Uyển dịch</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-23</td>
+<td>輒筋</td>
+<td>Zhejin</td>
+<td>Flank Sinews</td>
+<td>zhé jīn</td>
+<td>cheop geun 첩근</td>
+<td>chō kin?</td>
+<td>Triếp cân</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-24</td>
+<td>日月</td>
+<td>Riyue</td>
+<td>Sun and Moon</td>
+<td>rì yuè</td>
+<td>il weol 일월</td>
+<td>jitsu getsu</td>
+<td>Nhật nguyệt</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-25</td>
+<td>京門</td>
+<td>Jingmen</td>
+<td>Capital Gate</td>
+<td>jīng mén</td>
+<td>gyeong mun 경문</td>
+<td>kei mon</td>
+<td>Kinh môn</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-26</td>
+<td>帶脈</td>
+<td>Daimai</td>
+<td>Girdling Vessel</td>
+<td>dài mài</td>
+<td>dae maek 대맥</td>
+<td>tai myaku</td>
+<td>Đới mạch</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-27</td>
+<td>五樞</td>
+<td>Wushu</td>
+<td>Five Pivots</td>
+<td>wǔ shū</td>
+<td>o chu 오추</td>
+<td>gō sū</td>
+<td>Ngũ khu</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-28</td>
+<td>維道</td>
+<td>Weidao</td>
+<td>Linking Path</td>
+<td>wéi dào</td>
+<td>yu do 유도</td>
+<td>yui dō</td>
+<td>Duy đạo</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-29</td>
+<td>居髎</td>
+<td>Juliao</td>
+<td>Stationary Crevice</td>
+<td>jū liáo</td>
+<td>geo ryo 거료</td>
+<td>kyo ryō</td>
+<td>Cự liêu</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-30</td>
+<td>環跳</td>
+<td>Huantiao</td>
+<td>Jumping Circle</td>
+<td>huán tiào</td>
+<td>hwan do 환도</td>
+<td>kan chō</td>
+<td>Hoàn khiêu</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-31</td>
+<td>風市</td>
+<td>Fengshi</td>
+<td>Wind Market</td>
+<td>fēng shì</td>
+<td>pung si 풍시</td>
+<td>fū shi</td>
+<td>Phong thị</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-32</td>
+<td>中瀆</td>
+<td>Zhongdu</td>
+<td>Middle Ditch</td>
+<td>zhōng dú</td>
+<td>jung dok 중독</td>
+<td>chū toku?</td>
+<td>Trung độc</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-33</td>
+<td>膝陽關</td>
+<td>Xiyangguan</td>
+<td>Knee Yang Gate</td>
+<td>xī yáng guān</td>
+<td>[seul] yang gwan [슬] 양관</td>
+<td>hiza no yō kan?</td>
+<td>(Tất) Dương quan</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-34</td>
+<td>陽陵泉</td>
+<td>Yanglingquan</td>
+<td>Yang Mound Spring</td>
+<td>yáng líng quán</td>
+<td>yang neung cheon 양릉천</td>
+<td>yō ryō sen</td>
+<td>Dương lăng tuyền</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-35</td>
+<td>陽交</td>
+<td>Yangjiao</td>
+<td>Yang Intersection</td>
+<td>yáng jiāo</td>
+<td>yang gyo 양교</td>
+<td>yō ko</td>
+<td>Dương giao</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-36</td>
+<td>外丘(?)</td>
+<td>Waiqiu</td>
+<td>Outer Hill</td>
+<td>wài qiū(?)</td>
+<td>woe gu 외구</td>
+<td>gai kyū</td>
+<td>Ngoại khâu</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-37</td>
+<td>光明(?)</td>
+<td>Guangming</td>
+<td>Bright Light</td>
+<td>guāng míng(?)</td>
+<td>gwang myeong 광명</td>
+<td>kō mei?</td>
+<td>Quang minh</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-38</td>
+<td>陽輔</td>
+<td>Yangfu</td>
+<td>Yang Assistance</td>
+<td>yáng fǔ</td>
+<td>yang bo 양보</td>
+<td>yō ho</td>
+<td>Dương phụ</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-39</td>
+<td>懸鐘</td>
+<td>Xuanzhong</td>
+<td>Suspended Bell</td>
+<td>xuán zhōng</td>
+<td>hyeon jong 현종/jeol gol 절골</td>
+<td>ken shō</td>
+<td>Huyền chung</td>
+<td>絶骨 jué gǔ</td>
+</tr>
+<tr>
+<td>Gb-40</td>
+<td>丘墟</td>
+<td>Qiuxu</td>
+<td>Mound of Ruins</td>
+<td>qiū xū</td>
+<td>gu heo 구허</td>
+<td>kyū kyo</td>
+<td>Khâu khư</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-41</td>
+<td>足臨泣</td>
+<td>Zulinqi</td>
+<td>Foot Governor of Tears</td>
+<td>zú lín qì</td>
+<td>[jok] im eup [족] 임읍</td>
+<td>ashi no rin kyū</td>
+<td>Túc lâm khấp</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-42</td>
+<td>地五會</td>
+<td>Diwuhui</td>
+<td>Earth Five Meetings</td>
+<td>dì wǔ huì</td>
+<td>ji o hoe 지오회</td>
+<td>chi go e(?)</td>
+<td>Địa ngũ hội</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-43</td>
+<td>俠谿</td>
+<td>Xiaxi</td>
+<td>Clamped Stream</td>
+<td>xiá xī</td>
+<td>hyeop gye 협계</td>
+<td>kyō kei?</td>
+<td>Hiệp khê</td>
+<td></td>
+</tr>
+<tr>
+<td>Gb-44</td>
+<td>足竅陰</td>
+<td>Zuqiaoyin</td>
+<td>Yin Portals of the Foot</td>
+<td>zú qiào yīn</td>
+<td>[jok] gyu eum [족] 규음</td>
+<td>ashi no kyō in</td>
+<td>Túc khiếu âm</td>
+<td></td>
+</tr>
+</table>
+</body>
+</html>

@@ -22,6 +22,15 @@ describe('Canal', function() {
   it('isYang funciona con canales primarios', function() {
 	assert.equal(Canal.TAIYIN_MANO.isYang(),false);
   }); 
+ 
+  it('getCanalPorOrgano de RINON devuelve SHAOYIN_PIE', function() {
+	assert.equal(Canal.getCanalPorOrgano(Organo.RINON),Canal.SHAOYIN_PIE);
+  }); 
+  
+  it('getCanalPorNombre de taiyin del pie devuelve SHAOYIN_PIE', function() {
+	assert.equal(Canal.getCanalPorNombre('taiyin','pie'),Canal.TAIYIN_PIE);
+  });   
+  
 /*  
   it('isYang no ha de funcionar con canales que no sean primarios', function() {
 	assert.equal(Canal.RENMAI.isYang(),false);

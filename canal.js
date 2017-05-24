@@ -63,7 +63,7 @@ function Canal(parametros){
 	}
 }
 
-function canalPorNombre(nombre, pieMano) {
+function getCanalPorNombre(nombre, pieMano) {
 // helper function que devuelve el objeto Canal correspondiende a nombre. pieMano es optativo.
 	switch(nombre) {
 			case('taiyin') : 
@@ -113,21 +113,21 @@ function canalPorNombre(nombre, pieMano) {
 }
 
 function getCanalPorOrgano(organo) {
-switch (organo) {
-case Organo.RINON: return (SHAOYIN_PIE); break;
-case Organo.CORAZON: return (SHAOYIN_MANO); break;
-case Organo.PULMON: return (TAIYIN_MANO); break;
-case Organo.BAZO: return (TAIYIN_PIE); break;
-case Organo.IG: return(YANGMING_MANO); break;
-case Organo.ESTOMAGO: return(YANGMING_PIE); break;
-case Organo.ID: return(TAIYANG_MANO); break;
-case Organo.VEJIGA: return(TAIYANG_PIE); break;
-case Organo.PERICARDIO: return(JUEYIN_MANO); break;
-case Organo. HIGADO: return(JUEYIN_PIE); break;
-case Organo.SANJIAO: return(SHAOYANG_MANO); break;
-case Organo.VESICULA: return(SHAOYANG_PIE); break;
-default: return('imposible');
-}
+	switch (organo) {
+		case Organo.RINON: return (SHAOYIN_PIE); break;
+		case Organo.CORAZON: return (SHAOYIN_MANO); break;
+		case Organo.PULMON: return (TAIYIN_MANO); break;
+		case Organo.BAZO: return (TAIYIN_PIE); break;
+		case Organo.IG: return(YANGMING_MANO); break;
+		case Organo.ESTOMAGO: return(YANGMING_PIE); break;
+		case Organo.ID: return(TAIYANG_MANO); break;
+		case Organo.VEJIGA: return(TAIYANG_PIE); break;
+		case Organo.PERICARDIO: return(JUEYIN_MANO); break;
+		case Organo. HIGADO: return(JUEYIN_PIE); break;
+		case Organo.SANJIAO: return(SHAOYANG_MANO); break;
+		case Organo.VESICULA: return(SHAOYANG_PIE); break;
+		default: return('imposible');
+	}
 }
 
 //nombre, organo, pieMano, yin, yang, tipo)
@@ -182,3 +182,6 @@ module.exports.YINQIAO = YINGQIAO;
 module.exports.YANGQIAO = YANGQIAO;
 module.exports.YINWEI = YINWEI;
 module.exports.YANGWEI = YANGWEI;
+
+module.exports.getCanalPorOrgano=getCanalPorOrgano;
+module.exports.getCanalPorNombre=getCanalPorNombre;

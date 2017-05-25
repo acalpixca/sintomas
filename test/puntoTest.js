@@ -18,5 +18,13 @@ describe('Punto', function() {
 	assert.equal(p.getCanal().TAIYIN_MANO);
   });
   
+it('puntoPorCanalNumero de TAIYIN_MANO, 1 devuelve el punto correcto', function() {
+		// function puntoPorCanalNumero(can, num){
+	var	canal = Canal.TAIYIN_MANO;
+	var	numero = 1;
+
+	assert.equal(Punto.puntoPorCanalNumero(canal,numero), Punto.LU_1);
+});
+  
   // We can have more its here
 });

@@ -1,59 +1,3 @@
-var Organo=require('./organo');
-var Canal=require('./canal')
-var assert=require('assert');
-
-function Punto(parametros){
-	// parametros {canal, numero, nombre, chinoTradicional}
-	this.canal=parametros.canal;
-	this.numero=parametros.numero;
-	this.nombre=parametros.nombre;
-	this.chinoTradicional=parametros.chinoTradicional;
-	this.nombreTradicional=parametros.nombreTradicional;
-	
-	this.getCanal=function(){
-		return this.canal;
-	}
-	
-	this.getNumero=function(){
-		return this.numero;
-	}
-	
-	this.getNombre=function(){
-		return this.nombre;
-	}
-}
-
-function puntoPorCanalNumero(can, num){
-	// canal es el objeto canal (nombre_pieMano, o  dumai o renmai)
-// canalNumeroPuntoMap.set({canal: Canal.TAIYIN , numero: 1}, SP_1 ); -> estructura de mi map de puntos
-// myMap.get(keyObj); -> asi se obtiene el valor dada una clave compuesta
-	var keyObj = {
-		canal: can,
-		numero: num
-	}
-	return(canalNumeroPuntoMap.get(keyObj));
-	//canalNumeroPuntoMap.set(keyObj,Punto.Bl_9);
-	return(canalNumeroPuntoMap);
-
-}
-
-function puntoPorNombre(nombre){
-	var	parametros={ 
-		canal: Canal.TAIYIN_MANO,
-		numero: 1,
-		nombre: 'No me lo se'
-	};  
-	
-	var p=new Punto.Punto(parametros);
-	
-	switch(nombre) {
-		case 'd ': return(p); break;
-		default: return(p);
-	}
-}
-
-// Todos los puntos sacados de Deadman / wikipedia, como constantes: https://en.wikipedia.org/wiki/List_of_acupuncture_points
-
 const SP_1 =  new Punto({canal: 'Canal.TAIYIN_PIE' , numero: 1 , nombre: 'SP-1', chinoTradicional: '隱白', nombreTradicional: 'Yinbai'  });
 const SP_2 =  new Punto({canal: 'Canal.TAIYIN_PIE' , numero: 2 , nombre: 'SP-2', chinoTradicional: '大都', nombreTradicional: 'Dadu'  });
 const SP_3 =  new Punto({canal: 'Canal.TAIYIN_PIE' , numero: 3 , nombre: 'SP-3', chinoTradicional: '太白', nombreTradicional: 'Taibai'  });
@@ -1160,10 +1104,3 @@ module.exports.Gb_43 = Gb_43;
 module.exports.Gb_44 = Gb_44;
 
 module.exports.canalNumeroPuntoMap=canalNumeroPuntoMap;
-
-
-
-// fin de constantes y export de puntos
-
-module.exports.Punto=Punto;
-module.exports.puntoPorCanalNumero=puntoPorCanalNumero;

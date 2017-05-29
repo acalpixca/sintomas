@@ -31,7 +31,7 @@ for (var i=0; i<gp.length;i++) {
 			codi=codi + 'const ' + lista[j].punto.replace(/-/g,'_') + ' =  new Punto({canal: \'Canal.' + canal.getNombre().toUpperCase() + '_' + canal.getPieMano().toUpperCase() + '\' , numero: ' + lista[j].numero + ' , nombre: \''+ lista[j].punto + '\', chinoTradicional: \'' +  lista[j].caracter + '\', nombreTradicional: \'' + lista[j].nombre + '\'  });\n';
 			// parametros {canal, numero, nombre, chinoTradicional}
 			
-			codiMap=codiMap + 'canalNumeroPuntoMap.set({canal: Canal.' + canal.getNombre().toUpperCase() + '_' + canal.getPieMano().toUpperCase() + ' , numero: ' + lista[j].numero + '}, ' +  lista[j].punto.replace(/-/g,'_') + ' );\n';
+			codiMap=codiMap + 'canalNumeroPuntoMap.set(JSON.stringify({canal: Canal.' + canal.getNombre().toUpperCase() + '_' + canal.getPieMano().toUpperCase() + ' , numero: ' + lista[j].numero + '}), ' +  lista[j].punto.replace(/-/g,'_') + ' );\n';
 
 		}
 		

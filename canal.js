@@ -112,23 +112,7 @@ function getCanalPorNombre(nombre, pieMano) {
 		}
 }
 
-function getCanalPorOrgano(organo) {
-	switch (organo) {
-		case Organo.RINON: return (SHAOYIN_PIE); break;
-		case Organo.CORAZON: return (SHAOYIN_MANO); break;
-		case Organo.PULMON: return (TAIYIN_MANO); break;
-		case Organo.BAZO: return (TAIYIN_PIE); break;
-		case Organo.IG: return(YANGMING_MANO); break;
-		case Organo.ESTOMAGO: return(YANGMING_PIE); break;
-		case Organo.ID: return(TAIYANG_MANO); break;
-		case Organo.VEJIGA: return(TAIYANG_PIE); break;
-		case Organo.PERICARDIO: return(JUEYIN_MANO); break;
-		case Organo. HIGADO: return(JUEYIN_PIE); break;
-		case Organo.SANJIAO: return(SHAOYANG_MANO); break;
-		case Organo.VESICULA: return(SHAOYANG_PIE); break;
-		default: return('imposible');
-	}
-}
+
 
 //nombre, organo, pieMano, yin, yang, tipo)
 
@@ -158,6 +142,25 @@ const YINGQIAO = new Canal({nombre: 'yinqiao', tipo: CANALEXTRAORDINARIO});
 const YANGQIAO = new Canal({nombre: 'yangqiao', tipo: CANALEXTRAORDINARIO});
 const YINWEI = new Canal({nombre: 'yinwei', tipo: CANALEXTRAORDINARIO});
 const YANGWEI = new Canal({nombre: 'yangwei', tipo: CANALEXTRAORDINARIO});
+ 
+ 
+ function getCanalPorOrgano(organo) {
+	switch (organo) {
+		case Organo.RINON: return (SHAOYIN_PIE); break;
+		case Organo.CORAZON: return (SHAOYIN_MANO); break;
+		case Organo.PULMON: return (TAIYIN_MANO); break;
+		case Organo.BAZO: return (TAIYIN_PIE); break;
+		case Organo.IG: return(YANGMING_MANO); break;
+		case Organo.ESTOMAGO: return(YANGMING_PIE); break;
+		case Organo.ID: return(TAIYANG_MANO); break;
+		case Organo.VEJIGA: return(TAIYANG_PIE); break;
+		case Organo.PERICARDIO: return(JUEYIN_MANO); break;
+		case Organo. HIGADO: return(JUEYIN_PIE); break;
+		case Organo.SANJIAO: return(SHAOYANG_MANO); break;
+		case Organo.VESICULA: return(SHAOYANG_PIE); break;
+		default: return('imposible');
+	}
+}
  
 
 module.exports.Canal = Canal;

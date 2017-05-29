@@ -21,6 +21,14 @@ function Punto(parametros){
 	this.getNombre=function(){
 		return this.nombre;
 	}
+	
+	this.getNombreTradicional=function(){
+		return this.nombreTradicional;
+	}
+	
+	this.getChinoTradicional=function(){
+		return this.chinoTradicional;
+	}
 }
 
 function puntoPorCanalNumero(can, num){
@@ -32,9 +40,6 @@ function puntoPorCanalNumero(can, num){
 		numero: num
 	}
 	return(canalNumeroPuntoMap.get(JSON.stringify(keyObj)));
-	//canalNumeroPuntoMap.set(keyObj,Punto.Bl_9);
-	return(canalNumeroPuntoMap);
-
 }
 
 function puntoPorNombre(nombre){

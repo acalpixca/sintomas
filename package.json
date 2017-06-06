@@ -1,6 +1,6 @@
 {
   "name": "acu-logic",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "diagnostico mtc segun baGang, 5 elementos, etc.",
   "main": "index.js",
   "directories": {

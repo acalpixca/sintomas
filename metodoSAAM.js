@@ -168,7 +168,7 @@ Organo.Organo.prototype.estrellaSAAM=function(){
 };
 
 function tratamientoSAAM(organo, tonificarDispersar){
-	assert.equal((tonificarDispersar=='tonificar' || tonificarDispersar=='dispersar'),true);
+	assert.equal((tonificarDispersar=='tonificar' || tonificarDispersar=='dispersar' || tonificarDispersar=='calentar' || tonificarDispersar=='enfriar'),true);
 
 	var resultado=[];
 	var elementoAbuelo=organo.getElemento().abuelo();
@@ -263,13 +263,81 @@ function tratamientoSAAM(organo, tonificarDispersar){
 	}
 	
 	else if (tonificarDispersar=='calentar') {
-		// stuff
-		resultado.push('estamos en ello');
+		
+		// dispersas el agua y tonificas el fuego
+
+		if (organo.isYin()) { 
+			var organoAgua=Organo.RINON // el rinon
+			var organoFuego=Organo.CORAZON // el corazon
+		}
+		else {
+			var organoAgua=Organo.VEJIGA;
+			var organoFuego=Organo.ID;
+		}
+
+		//tonificar el FUEGO
+		var t1Meridiano=organoFuego.getNombre();
+		var t1Punto=organoFuego.estrellaSAAM()[Elemento.FUEGO.getNombre()];
+
+		var t2Meridiano=organo.getNombre();
+		var t2Punto=organo.estrellaSAAM()[Elemento.FUEGO.getNombre()];
+
+		// dispersar el AGUA
+		var d1Meridiano=organoAgua.getNombre();
+		var d1Punto=organoAgua.estrellaSAAM()[Elemento.AGUA.getNombre()];
+
+		var d2Meridiano=organo.getNombre();
+		var d2Punto=organo.estrellaSAAM()[Elemento.AGUA.getNombre()];
+// aqui intentamos usar bien los objetos
+		var t1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(t1Meridiano)),t1Punto);
+		var t2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(t2Meridiano)),t2Punto);
+		var d1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d1Meridiano)),d1Punto);
+		var d2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d2Meridiano)),d2Punto);
+
+		resultado.push("Dispersar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
+		resultado.push("Dispersar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
+		resultado.push("Tonificar " + t1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t1Meridiano).getNombre() + ') - ' + t1ObjetoPunto.getNumero() + ', o ' + t1ObjetoPunto.getNombreTradicional() + ' ' + t1ObjetoPunto.getChinoTradicional());
+		resultado.push("Tonificar " + t2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t2Meridiano).getNombre() + ') - ' + t2ObjetoPunto.getNumero() + ', o ' + t2ObjetoPunto.getNombreTradicional() + ' ' + t2ObjetoPunto.getChinoTradicional());
+
 	}
 	
 	else { // enfriar
-		// stuff
-		resultado.push('estamos en ello');
+		
+		// dispersas el fuego y tonificas el agua
+
+		if (organo.isYin()) { 
+			var organoAgua=Organo.RINON // el rinon
+			var organoFuego=Organo.CORAZON // el corazon
+		}
+		else {
+			var organoAgua=Organo.VEJIGA;
+			var organoFuego=Organo.ID;
+		}
+
+		//tonificar el AGUA
+		var t1Meridiano=organoAgua.getNombre();
+		var t1Punto=organoAgua.estrellaSAAM()[Elemento.AGUA.getNombre()];
+
+		var t2Meridiano=organo.getNombre();
+		var t2Punto=organo.estrellaSAAM()[Elemento.AGUA.getNombre()];
+
+		// dispersar el fuego
+		var d1Meridiano=organoFuego.getNombre();
+		var d1Punto=organoFuego.estrellaSAAM()[Elemento.FUEGO.getNombre()];
+
+		var d2Meridiano=organo.getNombre();
+		var d2Punto=organo.estrellaSAAM()[Elemento.FUEGO.getNombre()];
+// aqui intentamos usar bien los objetos
+		var t1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(t1Meridiano)),t1Punto);
+		var t2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(t2Meridiano)),t2Punto);
+		var d1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d1Meridiano)),d1Punto);
+		var d2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d2Meridiano)),d2Punto);
+
+		resultado.push("Dispersar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
+		resultado.push("Dispersar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
+		resultado.push("Tonificar " + t1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t1Meridiano).getNombre() + ') - ' + t1ObjetoPunto.getNumero() + ', o ' + t1ObjetoPunto.getNombreTradicional() + ' ' + t1ObjetoPunto.getChinoTradicional());
+		resultado.push("Tonificar " + t2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t2Meridiano).getNombre() + ') - ' + t2ObjetoPunto.getNumero() + ', o ' + t2ObjetoPunto.getNombreTradicional() + ' ' + t2ObjetoPunto.getChinoTradicional());
+
 	}
 	return(resultado);
 }

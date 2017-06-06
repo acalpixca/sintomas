@@ -206,19 +206,20 @@ function tratamientoSAAM(organo, tonificarDispersar){
 		var d1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d1Meridiano)),d1Punto);
 		var d2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d2Meridiano)),d2Punto);
 
-		resultado.push("Tonificar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
-		resultado.push("Tonificar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
+		resultado.push("Dispersar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
+		resultado.push("Dispersar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
 		resultado.push("Tonificar " + t1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t1Meridiano).getNombre() + ') - ' + t1ObjetoPunto.getNumero() + ', o ' + t1ObjetoPunto.getNombreTradicional() + ' ' + t1ObjetoPunto.getChinoTradicional());
 		resultado.push("Tonificar " + t2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t2Meridiano).getNombre() + ') - ' + t2ObjetoPunto.getNumero() + ', o ' + t2ObjetoPunto.getNombreTradicional() + ' ' + t2ObjetoPunto.getChinoTradicional());
+
 // fin aqui
 		/* 
 		resultado.push("Dispersar " + d1Meridiano + d1Punto + ".");
-		resultado.push("Dispersar " + d2Meridiano + d2Punto + ".");	
+		resultado.push("Dispersar " + d2Meridiano + d2Punto + ".");
 		resultado.push("Tonificar " + t1Meridiano + t1Punto + ".");	
 		resultado.push("Tonificar " + t2Meridiano + t2Punto + ".");
-	 */
+		 */
 	}
-	else { // dispersar
+	else if (tonificarDispersar=='dispersar') { // dispersar
 	// dispersas el hijo y tonificas el abuelo
 		if (organo.isYin()) { 
 			var organoHijo=elementoHijo.organoYin();
@@ -248,8 +249,8 @@ function tratamientoSAAM(organo, tonificarDispersar){
 		var d1ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d1Meridiano)),d1Punto);
 		var d2ObjetoPunto=Punto.puntoPorCanalNumero(Canal.getCanalPorOrgano(Organo.organoPorNombre(d2Meridiano)),d2Punto);
 		
-		resultado.push("Tonificar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
-		resultado.push("Tonificar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
+		resultado.push("Dispersar " + d1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d1Meridiano).getNombre() + ') - ' + d1ObjetoPunto.getNumero() + ', o ' + d1ObjetoPunto.getNombreTradicional() + ' ' + d1ObjetoPunto.getChinoTradicional());
+		resultado.push("Dispersar " + d2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(d2Meridiano).getNombre() + ') - ' + d2ObjetoPunto.getNumero() + ', o ' + d2ObjetoPunto.getNombreTradicional() + ' ' + d2ObjetoPunto.getChinoTradicional());	
 		resultado.push("Tonificar " + t1ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t1Meridiano).getNombre() + ') - ' + t1ObjetoPunto.getNumero() + ', o ' + t1ObjetoPunto.getNombreTradicional() + ' ' + t1ObjetoPunto.getChinoTradicional());
 		resultado.push("Tonificar " + t2ObjetoPunto.getCanal().replace('Canal.','') + ' (' + Organo.organoPorNombre(t2Meridiano).getNombre() + ') - ' + t2ObjetoPunto.getNumero() + ', o ' + t2ObjetoPunto.getNombreTradicional() + ' ' + t2ObjetoPunto.getChinoTradicional());		
 		
@@ -259,6 +260,16 @@ function tratamientoSAAM(organo, tonificarDispersar){
 		resultado.push("Dispersar " + d2Meridiano + d2Punto + ".");
 		resultado.push("Tonificar " + t1Meridiano + t1Punto + ".");	
 		resultado.push("Tonificar " + t2Meridiano + t2Punto + "."); */
+	}
+	
+	else if (tonificarDispersar=='calentar') {
+		// stuff
+		resultado.push('estamos en ello');
+	}
+	
+	else { // enfriar
+		// stuff
+		resultado.push('estamos en ello');
 	}
 	return(resultado);
 }

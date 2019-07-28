@@ -27,7 +27,17 @@ describe('Organo', function() {
   it('Organo HIGADO es MADERA', function() {
 	assert.equal(Organo.HIGADO.getElemento().nombre,'madera');
   });
-	  
+
+  it('Hora min en reloj para Organo HIGADO es 1', function() {
+  assert.equal(Organo.HIGADO.getHoraMin(),1);
+  });
+
+  it('Hora max en reloj para Organo HIGADO es 1', function() {
+  assert.equal(Organo.HIGADO.getHoraMax(),3);
+  });
+
+  it('Organo HIGADO es MADERA', function() {
+  assert.equal(Organo.HIGADO.getElemento().nombre,'madera');
+  });
   // We can have more its here
 });
-

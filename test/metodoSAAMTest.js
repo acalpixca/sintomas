@@ -9,22 +9,23 @@ var assert = chai.assert;
 
 describe('MetodoSAAM', function() {
 
-  /*
+
   it('tratamientoSAAM tonificar VEJIGA', function() {
 
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'Tonificar YANGMING_MANO (intestino grueso) - 1, o Shangyang ??,Tonificar TAIYANG_PIE (vejiga) - 67, o Zhiyin ??,Tonificar YANGMING_PIE (estomago) - 36, o Zusanli ???,Tonificar TAIYANG_PIE (vejiga) - 40, o Weizhong ??');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.VEJIGA,'tonificar').toString(),'Dispersar ESTOMAGO - 36 -- Zusanli 足三里,Dispersar VEJIGA - 40 -- Weizhong 委中,Tonificar INTESTINO GRUESO - 1 -- Shangyang 商陽,Tonificar VEJIGA - 67 -- Zhiyin 至陰');
   });
+
 
   it('tratamientoSAAM tonficar ID', function() {
 
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.ID,'tonificar').toString(),'Tonificar SHAOYANG_PIE (vesicula biliar) - 41, o Zulinqi ???,Tonificar TAIYANG_MANO (intestino delgado) - 3, o Houxi ??,Tonificar TAIYANG_PIE (vejiga) - 66, o Zutonggu ???,Tonificar TAIYANG_MANO (intestino delgado) - 2, o Qiangu ??');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.ID,'tonificar').toString(),'Dispersar VEJIGA - 66 -- Zutonggu 足通谷,Dispersar INTESTINO DELGADO - 2 -- Qiangu 前谷,Tonificar VESICULA BILIAR - 41 -- Zulinqi 足臨泣,Tonificar INTESTINO DELGADO - 3 -- Houxi 後谿');
   });
 
   it('tratamientoSAAM dispersar HIGADO', function() {
 
-	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'Tonificar SHAOYIN_MANO (corazon) - 8, o Shaofu ??,Tonificar JUEYIN_PIE (higado) - 2, o xíng jian ??,Tonificar TAIYIN_MANO (pulmon) - 8, o Jingqu ??,Tonificar JUEYIN_PIE (higado) - 4, o zhong feng ??');
+	assert.equal(MetodoSAAM.tratamientoSAAM(Organo.HIGADO,'dispersar').toString(),'Dispersar CORAZON - 8 -- Shaofu 少府,Dispersar HIGADO - 2 -- xíng jiān 行間,Tonificar PULMON - 8 -- Jingqu 經渠,Tonificar HIGADO - 4 -- zhōng fēng 中封');
   });
-*/
+
   it('Inclusion del metodo estrellaSAAM en Organo mediante manipulacion de su prototype. Punta fuego de estrella RINON vale 2.', function() {
 
 	assert.strictEqual(Organo.RINON.estrellaSAAM().fuego,2);

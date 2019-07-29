@@ -5,7 +5,7 @@ function Organo(params){
 	this.yin=params.yin;
 	this.yang=params.yang;
 	this.elemento=params.elemento;
-	this.horaMin=params.horaMin;
+	this.horaMaxInicio=params.horaMaxInicio;
 
 	this.isYin=function(){
 		return(this.yin);
@@ -20,12 +20,20 @@ function Organo(params){
 		return(this.nombre);
 	}
 
-	this.getHoraMin=function(){
-		return(this.horaMin);
+	this.getHoraMaxInicio=function(){
+		return(this.horaMaxInicio);
 	}
 
-	this.getHoraMax=function() {
-		return((this.horaMin +2) % 24);
+	this.getHoraMaxFinal=function() {
+		return((this.horaMaxInicio +2) % 24);
+	}
+
+	this.getHoraMinInicio=function() {
+		return((this.horaMaxInicio + 12) % 24);
+	}
+
+	this.getHoraMinFinal=function() {
+return((this.horaMaxInicio + 14) % 24);
 	}
 }
 
@@ -58,22 +66,22 @@ function organoPorNombre(nombre) {
 }
 
 // zangfu elemento FUEGO
-const CORAZON = new Organo({nombre:'corazon', yin: true, yang: false, elemento: Elemento.FUEGO, horaMin: 11});
-const ID = new Organo({nombre:'intestino delgado', yin: false, yang: true, elemento: Elemento.FUEGO, horaMin: 13});
-const PERICARDIO = new Organo({nombre:'pericardio', yin: true, yang: false, elemento: Elemento.FUEGO, horaMin: 19});
-const SANJIAO = new Organo({nombre:'san jiao', yin: false, yang: true, elemento: Elemento.FUEGO, horaMin: 21});
+const CORAZON = new Organo({nombre:'corazon', yin: true, yang: false, elemento: Elemento.FUEGO, horaMaxInicio: 11});
+const ID = new Organo({nombre:'intestino delgado', yin: false, yang: true, elemento: Elemento.FUEGO, horaMaxInicio: 13});
+const PERICARDIO = new Organo({nombre:'pericardio', yin: true, yang: false, elemento: Elemento.FUEGO, horaMaxInicio: 19});
+const SANJIAO = new Organo({nombre:'san jiao', yin: false, yang: true, elemento: Elemento.FUEGO, horaMaxInicio: 21});
 // zangfu elemento TIERRA
-const BAZO = new Organo({nombre:'bazo pancreas', yin: true, yang: false, elemento: Elemento.TIERRA, horaMin: 9});
-const ESTOMAGO = new Organo({nombre:'estomago', yin: false, yang: true, elemento: Elemento.TIERRA, horaMin: 7});
+const BAZO = new Organo({nombre:'bazo pancreas', yin: true, yang: false, elemento: Elemento.TIERRA, horaMaxInicio: 9});
+const ESTOMAGO = new Organo({nombre:'estomago', yin: false, yang: true, elemento: Elemento.TIERRA, horaMaxInicio: 7});
 // zangfu elemento METAL
-const PULMON = new Organo({nombre:'pulmon', yin: true, yang: false, elemento: Elemento.METAL, horaMin: 3});
-const IG = new Organo({nombre:'intestino grueso', yin: false, yang: true, elemento: Elemento.METAL, horaMin: 5});
+const PULMON = new Organo({nombre:'pulmon', yin: true, yang: false, elemento: Elemento.METAL, horaMaxInicio: 3});
+const IG = new Organo({nombre:'intestino grueso', yin: false, yang: true, elemento: Elemento.METAL, horaMaxInicio: 5});
 // zangfu elemento AGUA
-const RINON = new Organo({nombre:'rinon', yin: true, yang: false, elemento: Elemento.AGUA, horaMin: 5});
-const VEJIGA = new Organo({nombre:'vejiga', yin: false, yang: true, elemento: Elemento.AGUA, horaMin: 3});
+const RINON = new Organo({nombre:'rinon', yin: true, yang: false, elemento: Elemento.AGUA, horaMaxInicio: 5});
+const VEJIGA = new Organo({nombre:'vejiga', yin: false, yang: true, elemento: Elemento.AGUA, horaMaxInicio: 3});
 // zangfu elemento MADERA
-const HIGADO = new Organo({nombre:'higado', yin: true, yang: false, elemento: Elemento.MADERA, horaMin: 1});
-const VESICULA = new Organo({nombre:'vesicula biliar', yin: false, yang: true, elemento: Elemento.MADERA, horaMin: 23});
+const HIGADO = new Organo({nombre:'higado', yin: true, yang: false, elemento: Elemento.MADERA, horaMaxInicio: 1});
+const VESICULA = new Organo({nombre:'vesicula biliar', yin: false, yang: true, elemento: Elemento.MADERA, horaMaxInicio: 23});
 
 module.exports.organoPorNombre=organoPorNombre;
 module.exports.Organo = Organo;

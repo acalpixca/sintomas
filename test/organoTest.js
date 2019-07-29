@@ -28,16 +28,27 @@ describe('Organo', function() {
 	assert.equal(Organo.HIGADO.getElemento().nombre,'madera');
   });
 
-  it('Hora min en reloj para Organo HIGADO es 1', function() {
-  assert.equal(Organo.HIGADO.getHoraMin(),1);
+  it('Organo VEJIGA es AGUA', function() {
+  assert.equal(Organo.VEJIGA.getElemento().nombre,'agua');
   });
 
-  it('Hora max en reloj para Organo HIGADO es 1', function() {
-  assert.equal(Organo.HIGADO.getHoraMax(),3);
+  it('Hora max en reloj para Organo HIGADO comienza a las 1', function() {
+  assert.equal(Organo.HIGADO.getHoraMaxInicio(),1);
   });
 
-  it('Organo HIGADO es MADERA', function() {
-  assert.equal(Organo.HIGADO.getElemento().nombre,'madera');
+  it('Hora max en reloj para Organo HIGADO acaba a las 1', function() {
+  assert.equal(Organo.HIGADO.getHoraMaxFinal(),3);
   });
+
+  it('Hora min en reloj para Organo HIGADO comienza a las 13', function() {
+  assert.equal(Organo.HIGADO.getHoraMinInicio(),13);
+  });
+
+  it('Hora min en reloj para Organo HIGADO acaba a las 15', function() {
+  assert.equal(Organo.HIGADO.getHoraMinFinal(),15);
+  });
+
+
+
   // We can have more its here
 });

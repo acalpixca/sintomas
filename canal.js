@@ -1,5 +1,5 @@
-var Organo=require('./organo');
-var assert=require('assert');
+let Organo=require('./organo');
+let assert=require('assert');
 
 const CANALPRIMARIO="canalPrimario";
 const CANALDIVERGENTE="canalDivergente";
@@ -7,24 +7,24 @@ const CANALEXTRAORDINARIO="canalExtraordinario";
 
 function Canal(parametros){
 	// tipo es {canalPrimario | canalDivergente | canalExtraordinario }
-	var nombre=parametros.nombre;
-	var organo=parametros.organo;
-	var pieMano=parametros.pieMano;
-	var yin=parametros.yin;
-	var yang=parametros.yang;
-	var tipo=parametros.tipo;
-	
-	assert.equal((organo==null || organo==Organo.CORAZON || organo==Organo.ID || 
-	organo==Organo.PERICARDIO || organo==Organo.SANJIAO || 
-	organo==Organo.BAZO || organo==Organo.ESTOMAGO || 
-	organo==Organo.PULMON || organo==Organo.IG || 
-	organo==Organo.RINON ||	organo==Organo.VEJIGA || 
-	organo==Organo.HIGADO || 
+	let nombre=parametros.nombre;
+	let organo=parametros.organo;
+	let pieMano=parametros.pieMano;
+	let yin=parametros.yin;
+	let yang=parametros.yang;
+	let tipo=parametros.tipo;
+
+	assert.equal((organo==null || organo==Organo.CORAZON || organo==Organo.ID ||
+	organo==Organo.PERICARDIO || organo==Organo.SANJIAO ||
+	organo==Organo.BAZO || organo==Organo.ESTOMAGO ||
+	organo==Organo.PULMON || organo==Organo.IG ||
+	organo==Organo.RINON ||	organo==Organo.VEJIGA ||
+	organo==Organo.HIGADO ||
 	organo==Organo.VESICULA),true);
 
 	assert.equal((yin==null || yin==true || yin==false),true);
 	assert.equal((yang==null || yang==true || yang==false),true);
-	
+
 	assert.equal((pieMano==null || pieMano=='pie' || pieMano=='mano'),true);
 	assert.equal((tipo==CANALPRIMARIO || tipo==CANALDIVERGENTE || tipo==CANALEXTRAORDINARIO),true);
 
@@ -35,29 +35,29 @@ function Canal(parametros){
 	this.pieMano=pieMano;
 	this.tipo=tipo;
 
-	this.getNombre=function(){
-		return(this.nombre);	
+	this.getNombre= () => {
+		return(this.nombre);
 	}
-	this.getOrgano=function(){
+	this.getOrgano= () => {
 		return(this.organo);
 	}
-	this.isYin=function(){
+	this.isYin= () => {
 		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.yin);
 	}
-	this.isYang=function(){
+	this.isYang= () => {
 				assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.yang);
 	}
-	this.getPieMano=function(){
+	this.getPieMano= () => {
 		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano);
 	}
-	this.isPie=function(){
+	this.isPie= () => {
 		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano=="pie");
 	}
-	this.isMano=function(){
+	this.isMano= () => {
 		assert.equal(this.tipo,CANALPRIMARIO);
 		return(this.pieMano=="mano");
 	}
@@ -66,47 +66,47 @@ function Canal(parametros){
 function getCanalPorNombre(nombre, pieMano) {
 // helper function que devuelve el objeto Canal correspondiende a nombre. pieMano es optativo.
 	switch(nombre) {
-			case('taiyin') : 
-				if(pieMano=="pie") return(TAIYIN_PIE); else return(TAIYIN_MANO); 
+			case('taiyin') :
+				if(pieMano=="pie") return(TAIYIN_PIE); else return(TAIYIN_MANO);
 				break;
-			case('yangming') : 
-				if(pieMano=="pie") return(YANGMING_PIE); else return(YANGMING_MANO); 
+			case('yangming') :
+				if(pieMano=="pie") return(YANGMING_PIE); else return(YANGMING_MANO);
 				break;
-			case('shaoyin') : 
-				if(pieMano=="pie") return(SHAOYIN_PIE); else return(SHAOYIN_MANO); 
-				break;	
-			case('taiyang') : 
-				if(pieMano=="pie") return(TAIYANG_PIE); else return(TAIYANG_MANO); 
+			case('shaoyin') :
+				if(pieMano=="pie") return(SHAOYIN_PIE); else return(SHAOYIN_MANO);
 				break;
-			case('jueyin') : 
-				if(pieMano=="pie") return(JUEYIN_PIE); else return(JUEYIN_MANO); 
+			case('taiyang') :
+				if(pieMano=="pie") return(TAIYANG_PIE); else return(TAIYANG_MANO);
 				break;
-			case('shaoyang') : 
-				if(pieMano=="pie") return(SHAOYANG_PIE); else return(SHAOYANG_MANO); 
+			case('jueyin') :
+				if(pieMano=="pie") return(JUEYIN_PIE); else return(JUEYIN_MANO);
 				break;
-			case('renmai') : 
-				return(RENMAI); 
+			case('shaoyang') :
+				if(pieMano=="pie") return(SHAOYANG_PIE); else return(SHAOYANG_MANO);
 				break;
-			case('dumai') : 
-				return(DUMAI); 
+			case('renmai') :
+				return(RENMAI);
 				break;
-			case('daimai') : 
-				return(DAIMAI); 
+			case('dumai') :
+				return(DUMAI);
 				break;
-			case('chongmai') : 
-				return(CHONGMAI); 
+			case('daimai') :
+				return(DAIMAI);
 				break;
-			case('yinqiao') : 
-				return(YINQIAO); 
+			case('chongmai') :
+				return(CHONGMAI);
 				break;
-			case('yangqiao') : 
-				return(YANGQIAO); 
+			case('yinqiao') :
+				return(YINQIAO);
 				break;
-			case('yinwei') : 
-				return(YINWEI); 
+			case('yangqiao') :
+				return(YANGQIAO);
 				break;
-			case('yangwei') : 
-				return(YANGWEI); 
+			case('yinwei') :
+				return(YINWEI);
+				break;
+			case('yangwei') :
+				return(YANGWEI);
 				break;
 			default: return('impossible');
 		}
@@ -142,8 +142,8 @@ const YINGQIAO = new Canal({nombre: 'yinqiao', tipo: CANALEXTRAORDINARIO});
 const YANGQIAO = new Canal({nombre: 'yangqiao', tipo: CANALEXTRAORDINARIO});
 const YINWEI = new Canal({nombre: 'yinwei', tipo: CANALEXTRAORDINARIO});
 const YANGWEI = new Canal({nombre: 'yangwei', tipo: CANALEXTRAORDINARIO});
- 
- 
+
+
  function getCanalPorOrgano(organo) {
 	switch (organo) {
 		case Organo.RINON: return (SHAOYIN_PIE); break;
@@ -161,7 +161,7 @@ const YANGWEI = new Canal({nombre: 'yangwei', tipo: CANALEXTRAORDINARIO});
 		default: return('imposible');
 	}
 }
- 
+
 
 module.exports.Canal = Canal;
 module.exports.TAIYIN_MANO = TAIYIN_MANO;
@@ -176,7 +176,7 @@ module.exports.JUEYIN_MANO = JUEYIN_MANO;
 module.exports.JUEYIN_PIE = JUEYIN_PIE;
 module.exports.SHAOYANG_MANO = SHAOYANG_MANO;
 module.exports.SHAOYANG_PIE = SHAOYANG_PIE;
- 
+
 module.exports.RENMAI = RENMAI;
 module.exports.DUMAI = DUMAI;
 module.exports.DAIMAI = DAIMAI;

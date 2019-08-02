@@ -1,8 +1,8 @@
 // Constructor
 function BaGang() {
   // Parametros: ninguno.
-  	this.yin = 0;
-  	this.yang = 0; 
+  this.yin = 0;
+  this.yang = 0;
 	this.interno=0;
 	this.externo=0;
 	this.calor=0;
@@ -77,4 +77,3 @@ BaGang.prototype.getDeficiencia= function(){
 }
 // export the class
  module.exports = BaGang;
-

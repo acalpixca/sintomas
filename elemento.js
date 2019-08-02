@@ -2,28 +2,28 @@ const listaElementos=['fuego','tierra','metal','agua','madera'];
 
 function Elemento(nombre){
 	this.nombre=nombre;
-	this.padre=function(){
+	this.padre= () => {
 		//return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-1 + 5) % 5]);
-		var nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-1 + 5) % 5];
+		let nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-1 + 5) % 5];
 		return elementoPorNombre(nombre);
 	};
-	this.hijo=function(){
+	this.hijo= () => {
 		//return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+1) % 5]);
-		var nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+1) % 5];
+		let nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+1) % 5];
 		return elementoPorNombre(nombre);
 	};
-	this.abuelo=function(){
+	this.abuelo= () => {
 		//return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-2 + 5 ) % 5]);
-		var nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-2 + 5 ) % 5];
+		let nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)-2 + 5 ) % 5];
 		return elementoPorNombre(nombre);
 	};
-	this.nieto=function(){
+	this.nieto= () => {
 		//return(listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+2) % 5]);
-		var nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+2) % 5];
+		let nombre=listaElementos[Math.abs(listaElementos.indexOf(this.nombre)+2) % 5];
 		return elementoPorNombre(nombre);
 	}
-	this.getNombre=function(){
-		return(this.nombre);	
+	this.getNombre= () => {
+		return(this.nombre);
 	}
 }
 

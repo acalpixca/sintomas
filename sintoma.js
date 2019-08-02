@@ -1,4 +1,4 @@
-var BaGang = require('./baGang');
+let BaGang = require('./baGang');
 // Constructor
 function Sintoma(descripcion) {
   // always initialize all instance properties

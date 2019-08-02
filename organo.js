@@ -7,32 +7,32 @@ function Organo(params){
 	this.elemento=params.elemento;
 	this.horaMaxInicio=params.horaMaxInicio;
 
-	this.isYin=function(){
+	this.isYin= () => {
 		return(this.yin);
 	};
-	this.isYang=function(){
+	this.isYang= () => {
 		return(this.yang);
 	};
-	this.getElemento=function(){
+	this.getElemento= () => {
 		return(this.elemento);
 	};
-	this.getNombre=function(){
+	this.getNombre= () => {
 		return(this.nombre);
 	}
 
-	this.getHoraMaxInicio=function(){
+	this.getHoraMaxInicio= () => {
 		return(this.horaMaxInicio);
 	}
 
-	this.getHoraMaxFinal=function() {
+	this.getHoraMaxFinal= () => {
 		return((this.horaMaxInicio +2) % 24);
 	}
 
-	this.getHoraMinInicio=function() {
+	this.getHoraMinInicio= () => {
 		return((this.horaMaxInicio + 12) % 24);
 	}
 
-	this.getHoraMinFinal=function() {
+	this.getHoraMinFinal= () => {
 return((this.horaMaxInicio + 14) % 24);
 	}
 }

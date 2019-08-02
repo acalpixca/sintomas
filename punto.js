@@ -1,6 +1,6 @@
-var Organo=require('./organo');
-var Canal=require('./canal')
-var assert=require('assert');
+let Organo=require('./organo');
+let Canal=require('./canal')
+let assert=require('assert');
 
 function Punto(parametros){
 	// parametros {canal, numero, nombre, chinoTradicional}
@@ -9,24 +9,24 @@ function Punto(parametros){
 	this.nombre=parametros.nombre;
 	this.chinoTradicional=parametros.chinoTradicional;
 	this.nombreTradicional=parametros.nombreTradicional;
-	
-	this.getCanal=function(){
+
+	this.getCanal= () => {
 		return this.canal;
 	}
-	
-	this.getNumero=function(){
+
+	this.getNumero= () => {
 		return this.numero;
 	}
-	
-	this.getNombre=function(){
+
+	this.getNombre= () => {
 		return this.nombre;
 	}
-	
-	this.getNombreTradicional=function(){
+
+	this.getNombreTradicional= () => {
 		return this.nombreTradicional;
 	}
-	
-	this.getChinoTradicional=function(){
+
+	this.getChinoTradicional= () => {
 		return this.chinoTradicional;
 	}
 }
@@ -35,7 +35,7 @@ function puntoPorCanalNumero(can, num){
 	// canal es el objeto canal (nombre_pieMano, o  dumai o renmai)
 // canalNumeroPuntoMap.set({canal: Canal.TAIYIN , numero: 1}, SP_1 ); -> estructura de mi map de puntos
 // myMap.get(keyObj); -> asi se obtiene el valor dada una clave compuesta
-	var keyObj = {
+	let keyObj = {
 		canal: can,
 		numero: num
 	}
@@ -43,14 +43,14 @@ function puntoPorCanalNumero(can, num){
 }
 
 function puntoPorNombre(nombre){
-	var	parametros={ 
+	let	parametros={
 		canal: Canal.TAIYIN_MANO,
 		numero: 1,
 		nombre: 'No me lo se'
-	};  
-	
-	var p=new Punto.Punto(parametros);
-	
+	};
+
+	let p=new Punto.Punto(parametros);
+
 	switch(nombre) {
 		case 'd ': return(p); break;
 		default: return(p);

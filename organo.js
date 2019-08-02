@@ -1,4 +1,4 @@
-var Elemento=require('./elemento');
+let Elemento=require('./elemento');
 
 function Organo(params){
 	this.nombre=params.nombre;
